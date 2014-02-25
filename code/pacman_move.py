@@ -2,23 +2,26 @@ __author__ = 'David'
 
 import pygame
 
+
 def keydown(event, direction):
-    if event.key == pygame.K_UP:
-        direction[1] = -5
-    elif event.key == pygame.K_DOWN:
-        direction[1] = 5
-    elif event.key == pygame.K_RIGHT:
+    if event.key == pygame.K_RIGHT:
         direction[0] = 5
     elif event.key == pygame.K_LEFT:
         direction[0] = -5
+    elif event.key == pygame.K_DOWN:
+        direction[1] = 5
+    elif event.key == pygame.K_UP:
+        direction[1] = -5
+
 
 def keyup(event, direction):
-    if (event.key == pygame.K_UP or
-        event.key == pygame.K_DOWN):
-        direction[1] = 0
-    elif (event.key == pygame.K_RIGHT or
+    if (event.key == pygame.K_RIGHT or
         event.key == pygame.K_LEFT):
         direction[0] = 0
+    elif (event.key == pygame.K_UP or
+        event.key == pygame.K_DOWN):
+        direction[1] = 0
+
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -31,7 +34,6 @@ screen = pygame.display.set_mode(size)
 
 pac = pygame.image.load("../images/pacman.png")
 pacrect = pac.get_rect()
-
 
 while 1:
     for event in pygame.event.get():
