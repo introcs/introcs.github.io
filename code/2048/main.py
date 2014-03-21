@@ -45,13 +45,13 @@ def add_block(blocks):
         rand %= 16
 
     # Create a new block at that position.
-    blocks[rand] = block.Block(int(rand % 4), int(rand / 4))
+    blocks[rand] = block.Block(int(rand / 4), int(rand % 4))
 
 
 def move_single_block(blocks, old_position, new_position):
     # Copy the block, update it's position, and reset the old spot.
     blocks[new_position] = blocks[old_position]
-    blocks[new_position].move(int(new_position % 4), int(new_position / 4))
+    blocks[new_position].move(int(new_position / 4), int(new_position % 4))
     blocks[old_position] = None
 
 
