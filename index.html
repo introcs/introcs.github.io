@@ -5,10 +5,9 @@
   <meta charset='utf-8' />
   <meta http-equiv="X-UA-Compatible" content="chrome=1" />
   <meta name="description" content="Introcs.github.io : Intro CS Class Pages" />
-
-  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
   <title>Intro to CS</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -68,7 +67,7 @@
  </tr>
  <tr>
    <td>2014-01-06 Monday</td>
-   <td>Welcome Back & Review</td>
+   <td>Welcome Back &amp; Review</td>
    <td>
      <a href="https://docs.google.com/presentation/d/1cJ1xK7Bos8oNWQTRGyiVEnY8ruwy2zonLAByXp5yy34/edit?usp=sharing">Slides</a><br>
      <a href="http://goo.gl/Og9kiu">Student Survey</a>
@@ -333,20 +332,29 @@
   <td>2014-03-20 Thursday</td>
   <td>2048</td>
   <td>
-  <a href="https://docs.google.com/presentation/d/1_WuKVNG--RloyFhyMxbvTGsPw008reUmL0-H5KI9U1g/edit?usp=sharing">slides</a>
+  <a href="https://docs.google.com/presentation/d/1_WuKVNG--RloyFhyMxbvTGsPw008reUmL0-H5KI9U1g/edit?usp=sharing">Slides</a>
   </td>
 </tr>
 <tr>
   <td>2014-03-21 Friday</td>
   <td>2048</td>
   <td>
-  <a href="https://docs.google.com/presentation/d/1qdFwgVElkBerI3E57Un0UOjB4khVEcASr8o2b24l13M/edit?usp=sharing">slides</a>
+  <a href="https://docs.google.com/presentation/d/1qdFwgVElkBerI3E57Un0UOjB4khVEcASr8o2b24l13M/edit?usp=sharing">Slides</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="3" style="background-color: #fff">Week 30</td>
+</tr>
+<tr id="20140324" style="display: none;">
+  <td>2014-03-24 Monday</td>
+  <td>Python OOP</td>
+  <td>
+    <a href="https://docs.google.com/presentation/d/17ijub3t3HAJ6u8KmDYy1oDyfQZb1ubqzjQvJ88RWgAU/edit?usp=sharing">Slides</a>
   </td>
 </tr>
 </table>
 </section>
 </div>
-
 <!-- FOOTER  -->
 <div id="footer_wrap" class="outer">
   <footer class="inner">
@@ -354,7 +362,14 @@
   </footer>
 </div>
 
-
+<script>
+$(function() {
+  var date = new Date();
+  if (date.getYear() >= 2014 && date.getMonth() > 3 && date.getDate() >= 24) {
+    $("#20140324").show();
+  }
+});
+</script>
 
 </body>
 </html>
