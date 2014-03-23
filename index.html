@@ -364,8 +364,7 @@
 
 <script>
 $(function() {
-  var date = new Date();
-  if (date.getYear() >= 2014 && date.getMonth() > 3 && date.getDate() >= 24) {
+  if ((new Date()).getTime() >= Date.parse('03-24-2014')) {
     $("#20140324").show();
   }
 });
