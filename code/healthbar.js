@@ -1,4 +1,5 @@
-window.HealthBar = function(x, y, width, height) {
+window.HealthBar = function(x, y, width, height, opt_color) {
+  var color = opt_color || 'green';
   this.x = x;
   this.y = y;
   this.width = width;
@@ -8,12 +9,15 @@ window.HealthBar = function(x, y, width, height) {
     .color('grey');
   this.health = Crafty.e('2D', 'Canvas', 'Color')
     .attr({x: x+1, y: y+1, w: width-2, h: height-2})
-    .color('green');
+    .color(color);
   
   // The width goes from 0 to width-2. Percentages should map onto that range.
   this.setPercent = function(percent) {
     if (percent < 0) {
       percent = 0;
+    }
+    if (percent > 100) {
+      percent = 100;
     }
     this.health.w = (this.width-2) * (percent/100);
   };
